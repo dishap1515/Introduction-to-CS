@@ -1,57 +1,77 @@
 class ListNode {
     constructor(data, next = null) {
         this.data = data;
-        this.next = null;
+        this.next = next;
+        
     }
 }
 
 
-  class LinkedList {
-      constructor() {
-          this.head = null;
-          this._length = 0;
-      }
-    }
+class LinkedList {
+  constructor() {
+    this.head;
+    this._length = 0;
+  }
+}
+let head = this.head;
 
-    let head = this.head;
-    
-    
-    // create the first node
-    head = new ListNode(12);
-    
-    // add a second node
-    head.next = new ListNode(99);
-    
-    // add a third node
-    head.next.next = new ListNode(37);
-    
-    insertNodeAtEnd = (data) => {
-      let currentNode = head;
-      if (currentNode) {
-        while (currentNode.next) {
-          currentNode = currentNode.next;
-        }
-    
-        currentNode.next = new ListNode(data);
-      } else {
-        head = new ListNode(data);
-       
-      }
-    
-      this._length++;
-     return '';
-     
+let node = new ListNode(12);
+node.next = head;
+head = node;
+node.next = new ListNode(99);
+node.next.next = new ListNode(37);
+
+
+LinkedList.prototype.append = function(val) {
+  val = null;
+  let currentNode = node;
+  if (currentNode) {
+    while (currentNode.next) {
+      currentNode = currentNode.next;
     }
-    
-    
-    
-    
-    
-    let current = head;
-    
-    while (current !== null) {
-      console.log(current.data);
-      current = current.next;
-    }
-    console.log(insertNodeAtEnd(10));
+    currentNode.next = new ListNode(val);
+  } else {
+    node = new ListNode(val);
+  }
+  this._length++;
+  return null;
+}
+
+remove = (index) => {
+  if (head == null) {
+    return;
+  } 
+  if (index === 0) {
+    head = head.next;
+    return;
+  }
+  for (var i = 0; head!=null && i < index - 1; i++) {
+    head = head.next;
+  }
+  if (head == null || head.next == null) {
+    return;
+  }
+  let next = head.next.next;
+  head.next = next;
+}
+
+let current = node;
+let list = new LinkedList();
+
+while (current !== null) {
+  console.log(current.data);
+  current = current.next;
+}
+
+list.append(100);
+console.log(current);
+
+remove(1);
+console.log(node);
+console.log(list);
+
+
+
+
+
 
