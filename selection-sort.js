@@ -13,5 +13,5 @@ function selectionSort(array) {
     }
     return array;
 }
-
-console.log(selectionSort([64,25,12,22,11]));
+exports.selectionSort = selectionSort;
+//console.log(selectionSort([64,25,12,22,11]));
