@@ -14,5 +14,5 @@ function insertionSort(array) {
     }
     return array;
 }
-
-console.log(insertionSort([1, 4, 2, 8, 345, 123, 43, 32, 55, 92]));
+exports.insertionSort = insertionSort;
+//console.log(insertionSort([1, 4, 2, 8, 345, 123, 43, 32, 55, 92]));
