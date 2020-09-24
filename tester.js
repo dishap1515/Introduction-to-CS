@@ -1,5 +1,7 @@
 const ssort = require('./selection-sort');
 const bsort = require('./bubble-sort');
+const isort = require('./insertion-sort');
+
 
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -27,8 +29,10 @@ function sortArray(array) {
 
 var selectionSortedArray = ssort.selectionSort(arr.slice());
 var bubbleSortedArray = bsort.bubbleSort(arr.slice());
+var insertionSortedArray = isort.insertionSort(arr.slice());
 var inbuiltSortedArray = sortArray(arr.slice());
 
 console.log(selectionSortedArray);
 console.log(bubbleSortedArray);
+console.log(insertionSortedArray);
 console.log(inbuiltSortedArray);
