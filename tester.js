@@ -17,7 +17,6 @@ function getRandomArray(num) {
   return ints;
 }
 var arr = getRandomArray(10);
-console.log(arr);
 
 function sortArray(array) { 
   for(let i = 1; i < 1000; i++ ) { 
@@ -32,7 +31,27 @@ var bubbleSortedArray = bsort.bubbleSort(arr.slice());
 var insertionSortedArray = isort.insertionSort(arr.slice());
 var inbuiltSortedArray = sortArray(arr.slice());
 
-console.log(selectionSortedArray);
-console.log(bubbleSortedArray);
-console.log(insertionSortedArray);
-console.log(inbuiltSortedArray);
+if (!inbuiltSortedArray === selectionSortedArray) { 
+  try { 
+    throw ('Array not Sorted.');
+  } catch(e) {
+   
+    console.log(e);
+  }
+}
+if (!inbuiltSortedArray === bubbleSortedArray) { 
+  try { 
+    throw ('Array not Sorted.');
+  } catch(e) {
+   
+    console.log(e);
+  }
+}
+if (!inbuiltSortedArray === insertionSortedArray) { 
+  try { 
+    throw ('Array not Sorted.');
+  } catch(e) {
+   
+    console.log(e);
+  }
+}
