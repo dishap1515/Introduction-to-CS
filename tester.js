@@ -2,7 +2,7 @@ const ssort = require('./selection-sort');
 const bsort = require('./bubble-sort');
 const isort = require('./insertion-sort');
 
-for (let i = 1; i <= 1000; i++) { 
+for (let n = 1; n <= 1000; n++) { 
     function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
     }
@@ -28,13 +28,19 @@ for (let i = 1; i <= 1000; i++) {
     var insertionSortedArray = isort.insertionSort(arr.slice());
     var inbuiltSortedArray = sortArray(arr.slice());
 
-    if (!selectionSortedArray === inbuiltSortedArray) { 
-        throw ('Array not Sorted.');
+    for (let i = 0; i< arr.length; i++) { 
+        if (selectionSortedArray[i] !== inbuiltSortedArray[i]) { 
+            throw "Array not Sorted.";
+        }
     }
-    if (!bubbleSortedArray === inbuiltSortedArray) { 
-        throw ('Array not Sorted.');
+    for (let i = 0; i< arr.length; i++) { 
+        if (bubbleSortedArray[i] !== inbuiltSortedArray[i]) { 
+            throw "Array not Sorted.";
+        }
     }
-    if (!insertionSortedArray === inbuiltSortedArray) { 
-        throw ('Array not Sorted.');
+    for (let i = 0; i< arr.length; i++) { 
+        if (insertionSortedArray[i] !== inbuiltSortedArray[i]) { 
+            throw "Array not Sorted.";
+        }
     }
 }
